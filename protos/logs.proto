@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package logs;
+
+// The Logs service definition.
+service Logs {
+    rpc Print(GetRecentRequest) returns (GetRecentResponse) {}    
+}
+
+// the request message containing number of lings from logs
+message GetRecentRequest {
+    string linesNo = 1;
+}
+
+// the response message containing log lines
+message GetRecentResponse {
+    string logs = 1;
+}
